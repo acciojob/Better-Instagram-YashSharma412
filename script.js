@@ -12,7 +12,6 @@ for (let i = 0; i < images.length; i++) {
 }
 
 function handelDragStart(event){
-    console.log('started dragging', event.target.id);
     myObj.dragged = event.target.id;
 }
 
@@ -20,14 +19,12 @@ function handleDragOver(event) {
     event.preventDefault();
 }
 function handleDropEvent(event) {
-    console.log('dropped on ', event.target.id);
     myObj.dropOn = event.target.id;
     swapImages();
 }
 
 function swapImages() {
     if (myObj.dragged === myObj.dropOn) {
-        console.log('nothing happens')
         return;
     }
 
