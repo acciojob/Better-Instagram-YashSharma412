@@ -30,9 +30,16 @@ function swapImages() {
 
     let divA = document.getElementById(myObj.dragged);
     let divB = document.getElementById(myObj.dropOn);
-    let divNextToB = divB.nextElementSibling;
-	let divNextToA = divA.nextElementSibling;
-    parentDiv.insertBefore(divA, divNextToB);    
-    parentDiv.insertBefore(divB, divNextToA);
+// Ensure elements exist before swapping
+    if (divA && divB) {
+        // Get the next elements for reordering
+        let divNextToB = divB.nextElementSibling;
+        let divNextToA = divA.nextElementSibling;
 
+        // Swap the elements
+        parentDiv.insertBefore(divA, divNextToB);
+        parentDiv.insertBefore(divB, divNextToA);
+    } else {
+        console.error("One or both of the elements do not exist.");
+    }
 }
