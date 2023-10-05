@@ -31,7 +31,8 @@ function swapImages() {
     let divA = document.getElementById(myObj.dragged);
     let divB = document.getElementById(myObj.dropOn);
     let divNextToB = divB.nextElementSibling;
-    parentDiv.insertBefore(divB, divA);
+	let divNextToA = divA.nextElementSibling;
     parentDiv.insertBefore(divA, divNextToB);    
+    parentDiv.insertBefore(divB, divNextToA);
 
 }
