@@ -3,16 +3,14 @@ const myObj = { dragged:'',dropOn: '',};
 const images = document.getElementsByClassName('image');
 const parentDiv = document.getElementById('parent');
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    for (let i = 0; i < images.length; i++) {
-        let divi = images[i];
-        divi.id = `div${i + 1}`;
-        divi.addEventListener('dragstart', handelDragStart);
-        divi.addEventListener('dragover', handleDragOver);
-        divi.addEventListener('drop', handleDropEvent);
-    }
-});
+
+for (let i = 0; i < images.length; i++) {
+	let divi = images[i];
+	divi.addEventListener('dragstart', handelDragStart);
+	divi.addEventListener('dragover', handleDragOver);
+	divi.addEventListener('drop', handleDropEvent);
+}
+
 function handelDragStart(event){
     console.log('started dragging', event.target.id);
     myObj.dragged = event.target.id;
